@@ -8,6 +8,9 @@ package Decorator;
  **/
 public class Sword extends AbstractEquipmentDecorator {
 
+    /**
+     * 通过组合的方式持有了游戏角色基类
+     */
     private AbstractCharacter character;
 
     public Sword(AbstractCharacter character) {
@@ -19,15 +22,19 @@ public class Sword extends AbstractEquipmentDecorator {
         return character.getHp();
     }
 
+    /**
+     * 在原有角色基础上攻击力+30
+     */
     @Override
     public Integer getAtk() {
-        //攻击力+30
         return character.getAtk() + 30;
     }
 
+    /**
+     * 在原有角色基础上防御力+5
+     */
     @Override
     public Integer getDef() {
-        //防御力+5
         return character.getDef() + 5;
     }
 
@@ -36,6 +43,10 @@ public class Sword extends AbstractEquipmentDecorator {
         return character.getSpd();
     }
 
+
+    /**
+     * 将原有角色 携带的所有都打印出来
+     */
     @Override
     public String describe() {
         return character.describe() + " 装备了一把大剑";
